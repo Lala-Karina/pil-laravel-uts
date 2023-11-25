@@ -12,7 +12,21 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+
+
+Route::get('produk', function () {
+
+    $kode_produk = [001, 002];
+    $nama_produk = ['Pena', 'Buku'];
+    $harga = ['20000', '15000'];
+    $jumlah = count($kode_produk);
+
+    return view('produk', compact('kode_produk', 'nama_produk', 'harga', 'jumlah'));
+});
+
+Route::get('form', function () {
+    return view('form');
 });
